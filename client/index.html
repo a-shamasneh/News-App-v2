@@ -1,0 +1,111 @@
+<!doctype html>
+<html ng-app="news" ng-controller="lastnews">
+  <head>
+    <meta charset="utf-8">
+    <title>News System</title>
+     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="app/app.js"></script>
+
+  </head>
+  <body>
+  <div class="container">
+  <div class="row">
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" rel="home" href="/"><img src="img/GoodNews.png" height= "27px"></a>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+        <ul class="nav navbar-nav">
+  <li><a href="#" class="btn-default" ng-click="get('bbc-news')">BBC</a></li>
+  <li><a href="#" class="btn-default" ng-click="get('cnn')">CNN</a></li>
+  <li><a href="#" class="btn-default" ng-click="get('google-news')">GOOGLE</a></li>
+  <li><a href="#" class="btn-default" ng-click="get('reuters')">REuTeRs</a></li>
+  <li><a href="#" class="btn-default" ng-click="get('abc-news-au')">Abc</a></li>
+  <li><a href="#" class="btn-default" ng-click="get('national-geographic')">N-Geo</a></li>
+  <li><a href="#" class="btn-default" ng-click="get('time')">Time</a></li>
+        </ul>
+
+        <div class="col-sm-3 col-md-3 pull-right">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" ng-model="search">
+        </div>
+        </form>
+        </div>
+
+    </div>
+</div>
+  
+  </div>
+</br></br>
+ <hr size="30">
+  </div>
+  <div class="container" ng-init="lastest">
+  
+  <div class="row" ng-repeat="elem in lastest | filter: search">
+    <p class="tit" style="text-align: center">{{elem.title}}</p>
+    <p style="text-align: -webkit-center"><img class="img-responsive " src="{{elem.urlToImage}}" width="60%"></p>
+     <p class="desc" style="text-align: center">{{elem.description}}</p>
+     <p style="text-align: center"><a href="{{elem.url}}" target="_blank" class=" btn btn-danger">Full Details</a></p>
+     </br>
+     <hr size="30">
+  </div>
+  </div>
+
+  <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3><span><img src="img/GoodNews.png" height= "27px"></span></h3>
+
+        
+
+        <p class="footer-company-name">Top!10!News&copy; 2017</p>
+      </div>
+
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Amman-jordan</span> </p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+962-799505658</p>
+        </div>
+
+        <div>
+          <i class="footer-company-about"></i>
+          <p><a href="mailto:a.ashmasneh@gmail.com">a.ashmasneh@gmail.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>About the company</span>
+         Our Web site  getting last top news from many popular source
+        </p>
+
+        
+
+      </div>
+
+    </footer>
+  </body>
+</html>
